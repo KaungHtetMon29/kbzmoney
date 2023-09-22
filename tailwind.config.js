@@ -17,8 +17,8 @@ export default {
         lightred: "#FF545F",
       },
       backgroundImage: {
-        BG1: "url('./src/assets/BG1.png')",
-        BG2: "url('./src/assets/Hero5.png')",
+        BG1: "url('./dist/img/background.jpg')",
+        BG2: "url('./dist/img/background.jpg')",
       },
     },
   },
