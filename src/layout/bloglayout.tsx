@@ -1,16 +1,14 @@
-import Malert from "../components/moneyalertcard";
 import nft from "../assets/nft.png";
 import savbank from "../assets/savacc.png";
 import bank from "../assets/bank.png";
 import av1 from "../assets/av1.png";
 import av2 from "../assets/av2.png";
 import av3 from "../assets/av3.png";
-import { Lens } from "../assets/svgs";
-import CustBtn from "../components/btns/Custombtn";
+
 import Bloghero from "../components/blog/hero";
 import Question from "../components/blog/Q&A";
 import { useParams } from "react-router-dom";
-import Article from "../components/blog/Article";
+
 import Related from "../components/blog/Related";
 import Latestnew from "../components/blog/latesnew";
 function BlogLayout() {

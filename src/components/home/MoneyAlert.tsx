@@ -5,7 +5,7 @@ import bank from "../../assets/bank.png";
 import av1 from "../../assets/av1.png";
 import av2 from "../../assets/av2.png";
 import av3 from "../../assets/av3.png";
-import { Arrow, Movearrow } from "../../assets/svgs";
+import { Movearrow } from "../../assets/svgs";
 import { useDispatch } from "react-redux/es/exports";
 import { ModeActions } from "../../utils/Mode";
 import { useNavigate } from "react-router-dom";
