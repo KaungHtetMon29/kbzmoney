@@ -1,5 +1,5 @@
 import Hero4 from "../../assets/Hero4.png";
-import { Arrow } from "../../assets/svgs";
+
 import CustBtn from "../btns/Custombtn";
 function WhyStandout() {
   return (
