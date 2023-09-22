@@ -82,7 +82,7 @@ function HeroSec1() {
               </div>
             </button>
           </div>
-          <div className="xl:w-full w-[50%]">
+          <div className="xl:w-fit w-[50%]">
             <img src={Hero1} alt="hero1 img" />
           </div>
         </div>
