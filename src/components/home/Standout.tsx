@@ -1,5 +1,6 @@
 import Hero4 from "../../assets/Hero4.png";
 import { Arrow } from "../../assets/svgs";
+import CustBtn from "../btns/Custombtn";
 function WhyStandout() {
   return (
     <div className="bg-white">
@@ -20,12 +21,9 @@ function WhyStandout() {
             deliver cutting edge Compliance solutions to our clients in a
             dynamic and fast-changing regulatory landscape.
           </p>
-          <button className="bg-lightred md:px-12 sm:px-6 md:py-4 px-12 py-4 w-fit text-white rounded-full flex items-center text-base sm:gap-3 gap-2">
-            Learn More
-            <div className="md:w-7 sm:w-5 w-5">
-              <Arrow />
-            </div>
-          </button>
+          <div className="flex mx-auto">
+            <CustBtn text="Learn More" />
+          </div>
         </div>
       </div>
     </div>

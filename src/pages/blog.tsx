@@ -1,13 +1,16 @@
-import Question from "../components/blog/Q&A";
-import Bloghero from "../components/blog/hero";
-import Latestnew from "../components/blog/latesnew";
+import { useEffect } from "react";
+import BlogLayout from "../layout/bloglayout";
+import { useDispatch } from "react-redux";
+import { ModeActions } from "../utils/Mode";
 
 function Blog() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(ModeActions.Navblog());
+  }, []);
   return (
     <div>
-      <Bloghero />
-      <Latestnew />
-      <Question />
+      <BlogLayout />
     </div>
   );
 }

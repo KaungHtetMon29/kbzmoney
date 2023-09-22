@@ -1,11 +1,15 @@
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Lens, Mail, Phone } from "../assets/svgs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { ModeActions } from "../utils/Mode";
 
 function Navcomp() {
-  const [navtype, setnavtype] = useState("home");
   const [search, setsearch] = useState(false);
+  const dispatch = useDispatch();
+  const Mode = useSelector((state: any) => state.ModeChg.mode);
+  useEffect(() => {}, [Mode]);
   return (
     <div className="fixed top-0 z-[999] w-full bg-white">
       <div className=" py-4 bg-contactbar">
@@ -34,11 +38,11 @@ function Navcomp() {
         <div className="flex items-center xl:gap-24 md:gap-16 sm:gap-8 gap-3 grow font-semibold sm:text-base text-xs ">
           <Link
             onClick={() => {
-              setnavtype("home");
+              dispatch(ModeActions.Navhome());
             }}
             to={""}
             className={`text-black flex py-4 sm:px-2 px-[1px] ${
-              navtype === "home"
+              Mode === "home"
                 ? "border-b-4 border-primarybluelight text-primarybluelight"
                 : "border-none"
             } `}
@@ -47,11 +51,11 @@ function Navcomp() {
           </Link>
           <Link
             onClick={() => {
-              setnavtype("blog");
+              dispatch(ModeActions.Navblog());
             }}
             to={"blog"}
             className={`text-black flex py-4  sm:px-2 px-[1px] ${
-              navtype === "blog"
+              Mode === "blog"
                 ? "border-b-4 border-primarybluelight  text-primarybluelight"
                 : "border-none"
             } `}
