@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
+import test from "./public/";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -17,8 +17,8 @@ export default {
         lightred: "#FF545F",
       },
       backgroundImage: {
-        BG1: "url('/dist/BG1.png')",
-        BG2: "url('/dist/Hero5.png')",
+        BG1: "url('/BG1.png')",
+        BG2: "url('/Hero5.png')",
       },
     },
   },
