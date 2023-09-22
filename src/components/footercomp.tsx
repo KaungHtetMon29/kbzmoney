@@ -47,12 +47,12 @@ function Footercomp() {
       </div>
       <div className="bg-footermain md:pt-32 pt-16 pb-8 text-white relative">
         <div className="2xl:max-w-7xl xl:max-w-6xl  lg:max-w-4xl md:max-w-2xl sm:max-w-xl max-w-[350px] mx-auto z-50 relative">
-          <div className=" flex sm:flex-row flex-col sm:items-start items-center pb-24 sm:gap-0 gap-20">
-            <div className="flex flex-col gap-8 xl:text-base md:text-sm sm:text-xs text-xs grow items-center">
+          <div className=" flex md:flex-row flex-col md:items-start items-center pb-24 md:gap-0 gap-20">
+            <div className="flex flex-col gap-8 xl:text-base md:text-sm sm:text-xs text-xs grow lg:items-start items-center">
               <div className="flex xl:w-72 lg:w-64 md:w-48 sm:w-40 w-32">
                 <img src={logowhite} />
               </div>
-              <div className="flex flex-col gap-4 xl:w-[22rem] lg:w-[20rem] md:w-[12rem] sm:w-[10rem] w-[16rem] sm:items-start ">
+              <div className="flex flex-col gap-4 xl:w-[22rem] lg:w-[20rem] md:w-[12rem] sm:w-[16rem] w-[16rem] items-start ">
                 <div className="flex items-center gap-4">
                   <div className="w-4">
                     <Locationpin />
@@ -77,7 +77,7 @@ function Footercomp() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:gap-8 sm:gap-4 gap-4 lg:text-base md:text-sm sm:text-xs text-sx w-fit grow items-center">
+            <div className="flex flex-col md:gap-8 sm:gap-4 gap-4 lg:text-base md:text-sm sm:text-xs text-sx w-fit grow sm:items-start items-center">
               <div>
                 <h2 className="text-xl font-bold">Quick Links</h2>
               </div>
@@ -98,12 +98,10 @@ function Footercomp() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-8 lg:text-base md:text-sm sm:text-xs w-fit sm:items-start items-center">
-              <div>
-                <h2 className="lg:text-xl md:text-lg sm:text-base text-base font-bold">
-                  About Us
-                </h2>
-              </div>
+            <div className="flex flex-col gap-8 lg:text-base md:text-sm sm:text-xs w-fit md:items-start items-center">
+              <h2 className="lg:text-xl md:text-lg sm:text-base text-base font-bold">
+                About Us
+              </h2>
               <div className="flex">
                 <div className="flex flex-col gap-4 md:items-start items-center">
                   {aboutusdata.map((e, i) => (
