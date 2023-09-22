@@ -10,7 +10,19 @@ function App() {
       element: <Root />,
       children: [
         { path: "", element: <Home /> },
-        { path: "blog", element: <Blog /> },
+        {
+          path: "blog",
+          children: [
+            {
+              path: "",
+              element: <Blog />,
+            },
+            {
+              path: ":id",
+              element: <Blog />,
+            },
+          ],
+        },
       ],
     },
   ]);

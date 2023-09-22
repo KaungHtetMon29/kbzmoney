@@ -1,9 +1,18 @@
 import { Arrow } from "../../assets/svgs";
 
-function CustBtn({ text, clr = "#FF545F" }: { text: string; clr?: string }) {
+function CustBtn({
+  text,
+  clr = "lightred",
+  func,
+}: {
+  text: string;
+  clr?: string;
+  func?: () => void;
+}) {
   return (
     <button
-      className={`bg-[${clr}] px-12 py-4 w-fit text-white rounded-full flex items-center text-base gap-3`}
+      onClick={() => func!()}
+      className={`bg-${clr} px-12 py-4 w-fit text-white rounded-full flex items-center text-base gap-3`}
     >
       {text}
       <div className="w-7">

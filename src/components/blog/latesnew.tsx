@@ -7,6 +7,8 @@ import av2 from "../../assets/av2.png";
 import av3 from "../../assets/av3.png";
 import { Lens } from "../../assets/svgs";
 import CustBtn from "../btns/Custombtn";
+import { useParams } from "react-router-dom";
+import Article from "./Article";
 function Latestnew() {
   const Malertarray = [
     {
@@ -70,21 +72,28 @@ function Latestnew() {
       },
     },
   ];
+  const { id } = useParams();
   return (
     <div className="2xl:max-w-7xl xl:max-w-6xl  lg:max-w-4xl md:max-w-2xl sm:max-w-xl max-w-[350px] mx-auto py-20 gap-8 flex-col flex">
-      <div className="justify-center ">
+      <div className={`justify-center ${id === undefined ? "flex" : "hidden"}`}>
         <h1 className="text-[38px] text-center font-semibold">Latest News</h1>
       </div>
-      <div className="flex justify-center gap-4 lg:flex-row flex-col-reverse lg:items-start items-center">
+      <div className="flex justify-center gap-4 lg:flex-row flex-col lg:items-start items-center">
         <div className="flex flex-wrap grow  gap-8 lg:items-start justify-center lg:w-2/3 w-full">
-          {Malertarray.map((e, i) => {
-            return (
-              <Malert key={i} Image={e.image} title={e.title} acc={e.acc} />
-            );
-          })}
-          <div className="lg:w-full w-fit justify-center flex">
-            <CustBtn text="Load More" clr="#063A78" />
-          </div>
+          {id === undefined ? (
+            <>
+              {Malertarray.map((e, i) => {
+                return (
+                  <Malert key={i} Image={e.image} title={e.title} acc={e.acc} />
+                );
+              })}
+              <div className="lg:w-full w-fit justify-center flex">
+                <CustBtn text="Load More" clr="primarybluelight" />
+              </div>
+            </>
+          ) : (
+            <Article />
+          )}
         </div>
         <div className="flex flex-col lg:w-[30%] w-[90%] gap-10">
           <div className="flex items-center bg-gray-50 w-full px-4 gap-6 rounded-lg border-2 border-black border-opacity-10">

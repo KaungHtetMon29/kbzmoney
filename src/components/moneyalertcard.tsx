@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Arrow, Clock } from "../assets/svgs";
 
 function Malert({
@@ -9,8 +10,9 @@ function Malert({
   Image: any;
   acc: { avatar: any; name: string; date: string; post: string };
 }) {
+  const navi = useNavigate();
   return (
-    <div className=" bg-white rounded-lg flex flex-col items-start 2xl:w-96 xl:w-80 lg:w-64 md:w-64 sm:w-64 w-[80%] gap-6 shadow-lg">
+    <div className=" bg-white rounded-lg flex flex-col items-start 2xl:w-96 xl:w-80 lg:w-64 w-[80%] gap-6 shadow-lg ">
       <img
         src={Image}
         alt={title}
@@ -20,7 +22,7 @@ function Malert({
         <div className="xl:text-xl lg:text-lg font-semibold">{title}</div>
         <div className="w-full text-left">
           <div className="flex flex-col xl:gap-8 gap-4">
-            <div className="flex xl:items-center lg:items-start xl:flex-row xl:gap-0 gap-2 flex-col text-base text-center ">
+            <div className="flex xl:items-center lg:items-start sm:flex-row xl:gap-0 gap-2 flex-col text-base text-center ">
               <div className="flex items-center gap-2 grow">
                 <img
                   src={acc.avatar}
@@ -40,7 +42,12 @@ function Malert({
             <div className="xl:text-base lg:text-sm">
               <p>{acc.post}</p>
             </div>
-            <p className="flex gap-3 items-center font-bold cursor-pointer">
+            <p
+              className="flex gap-3 items-center font-bold cursor-pointer"
+              onClick={() => {
+                navi("/blog/1");
+              }}
+            >
               Read more
               <div className="w-6">
                 <Arrow color="black" />

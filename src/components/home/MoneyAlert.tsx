@@ -6,6 +6,10 @@ import av1 from "../../assets/av1.png";
 import av2 from "../../assets/av2.png";
 import av3 from "../../assets/av3.png";
 import { Arrow, Movearrow } from "../../assets/svgs";
+import { useDispatch } from "react-redux/es/exports";
+import { ModeActions } from "../../utils/Mode";
+import { useNavigate } from "react-router-dom";
+import CustBtn from "../btns/Custombtn";
 function Moneyalert() {
   const Malertarray = [
     {
@@ -39,6 +43,12 @@ function Moneyalert() {
       },
     },
   ];
+  const dispatch = useDispatch();
+  const navi = useNavigate();
+  const Loadmore = () => {
+    navi("/blog");
+    dispatch(ModeActions.Navblog());
+  };
   return (
     <div className="bg-white ">
       <div className=" relative 2xl:max-w-7xl xl:max-w-6xl  lg:max-w-4xl md:max-w-2xl sm:max-w-xl mx-auto justify-center items-center flex flex-col py-32 gap-12">
@@ -64,12 +74,7 @@ function Moneyalert() {
             </div>
           </div>
         </div>
-        <button className="bg-lightred px-12 py-4 w-fit text-white rounded-full flex items-center text-base gap-3">
-          Load More
-          <div className="w-7">
-            <Arrow />
-          </div>
-        </button>
+        <CustBtn text="Load More" func={Loadmore} />
       </div>
     </div>
   );
