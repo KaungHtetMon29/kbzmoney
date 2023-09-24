@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import Modeslice from "./Mode";
-const Store = configureStore({ reducer: { ModeChg: Modeslice.reducer } });
+import Fetchpostslice from "./fetcher";
+const Store = configureStore({
+  reducer: { ModeChg: Modeslice.reducer, Fetchpost: Fetchpostslice.reducer },
+});
 
 export default Store;

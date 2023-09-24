@@ -9,6 +9,9 @@ import { Lens } from "../../assets/svgs";
 import CustBtn from "../btns/Custombtn";
 import { useParams } from "react-router-dom";
 import Article from "./Article";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchposts } from "../../utils/fetcher";
 function Latestnew() {
   const Malertarray = [
     {
@@ -72,7 +75,17 @@ function Latestnew() {
       },
     },
   ];
+  const posts = useSelector((state) => state.Fetchpost.posts);
+  const postarr = [...posts];
+  const recposts = useSelector((state) => state.Fetchpost.recposts);
+  const cats = useSelector((state) => state.Fetchpost.cats);
+  const tags = useSelector((state) => state.Fetchpost.tags);
   const { id } = useParams();
+  const [page, setpage] = useState(0);
+  const load = () => {
+    setpage(page + 6);
+  };
+
   return (
     <div className="2xl:max-w-7xl xl:max-w-6xl  lg:max-w-4xl md:max-w-2xl sm:max-w-xl max-w-[350px] mx-auto py-20 gap-8 flex-col flex">
       <div className={`justify-center ${id === undefined ? "flex" : "hidden"}`}>
@@ -82,17 +95,24 @@ function Latestnew() {
         <div className="flex flex-wrap grow  gap-8 lg:items-start justify-center lg:w-2/3 w-full">
           {id === undefined ? (
             <>
-              {Malertarray.map((e, i) => {
-                return (
-                  <Malert key={i} Image={e.image} title={e.title} acc={e.acc} />
-                );
+              {/* <Malert posts={posts[0]} /> */}
+              {posts.slice(page, page + 6).map((e, i) => {
+                return <Malert key={i} posts={e} index={i} />;
               })}
-              <div className="lg:w-full w-fit justify-center flex">
-                <CustBtn text="Load More" clr="primarybluelight" />
+              <div
+                className={`lg:w-full w-fit justify-center flex ${
+                  page + 6 >= posts.length
+                    ? "pointer-events-none opacity-50"
+                    : ""
+                }`}
+              >
+                <CustBtn text="Load More" clr="primarybluelight" func={load} />
               </div>
             </>
           ) : (
-            <Article />
+            <div className="w-full">
+              <Article />
+            </div>
           )}
         </div>
         <div className="flex flex-col lg:w-[30%] w-[90%] gap-10">
@@ -108,50 +128,45 @@ function Latestnew() {
               <h2 className="text-[18px] font-bold">Categories</h2>
             </div>
             <div className="bg-white p-4 rounded-b-lg">
-              <div className="flex font-semibold">
-                <p className="flex grow">Alerts</p>
-                <p>35</p>
-              </div>
+              {cats.map((e) => (
+                <div className="flex font-semibold">
+                  <p className="flex grow">{e.post_category}</p>
+                  <p>{e.count}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="rounded-lg border-2 border-black border-opacity-10">
             <div className="bg-gray-50 p-4 ">
               <h2 className="text-[18px] font-bold">Recent Post</h2>
             </div>
-            <div className="bg-white p-4 rounded-b-lg">
-              <div className="flex font-semibold items-center gap-6">
-                <img
-                  src={nft}
-                  className=" object-cover object-center w-20 h-20 rounded-lg"
-                />
-                <div className="flex flex-col">
-                  <p>Major Crypto Exchanges Face Action Over</p>
-                  <p className="opacity-50">8 hours age</p>
+            {recposts.map((e) => (
+              <div className="bg-white p-4 rounded-b-lg">
+                <div className="flex font-semibold items-center gap-6">
+                  <img
+                    src={e.img}
+                    className=" object-cover object-center w-20 h-20 rounded-lg"
+                  />
+                  <div className="flex flex-col">
+                    <p>{e.title}</p>
+                    <p className="opacity-50">8 hours age</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
           <div className="rounded-lg border-2 border-black border-opacity-10">
             <div className="bg-gray-50 p-4 ">
-              <h2 className="text-[18px] font-bold">Recent Post</h2>
+              <h2 className="text-[18px] font-bold">tags</h2>
             </div>
             <div className="bg-white p-4 rounded-b-lg">
               <div className="flex items-center gap-3 flex-wrap">
-                <div className="flex flex-col">
-                  <p className="bg-gray-200 p-2 rounded-md">Money alerts</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="bg-gray-200 p-2 rounded-md">Money alerts</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="bg-gray-200 p-2 rounded-md">Money alerts</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="bg-gray-200 p-2 rounded-md">Money alerts</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="bg-gray-200 p-2 rounded-md">Money alerts</p>
-                </div>
+                {console.log(tags)}
+                {tags.map((e) => (
+                  <div className="flex flex-col">
+                    <p className="bg-gray-200 p-2 rounded-md">{e.tag}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
