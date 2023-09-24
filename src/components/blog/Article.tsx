@@ -67,7 +67,7 @@ function Article() {
             <div className="flex flex-col gap-12 text-base tracking-wide leading-relaxed">
               <img
                 src={article.img}
-                className="object-cover h-[30rem] w-full rounded-2xl"
+                className="object-cover object-center sm:h-[30rem] h-[15rem] w-full rounded-2xl"
               />
 
               {article.post}
