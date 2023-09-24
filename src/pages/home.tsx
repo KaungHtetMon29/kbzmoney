@@ -5,6 +5,7 @@ import WhyStandout from "../components/home/Standout";
 import ServicesPage from "../components/home/ServicesPage";
 import ClientFp from "../components/home/ClientFp";
 import Platforms from "../components/home/AML";
+
 function Home() {
   return (
     <div>
