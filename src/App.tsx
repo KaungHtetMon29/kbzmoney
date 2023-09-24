@@ -17,7 +17,7 @@ function App() {
             {
               path: "",
               element: (
-                <Suspense fallback={<p>Loading.....</p>}>
+                <Suspense fallback={<></>}>
                   <Blog />
                 </Suspense>
               ),
@@ -25,7 +25,7 @@ function App() {
             {
               path: ":id",
               element: (
-                <Suspense fallback={<p>Loading.....</p>}>
+                <Suspense fallback={<></>}>
                   <Blog />
                 </Suspense>
               ),
