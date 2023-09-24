@@ -26,7 +26,9 @@ function Moneyalert() {
     <div className="bg-white ">
       <div className=" relative 2xl:max-w-7xl xl:max-w-6xl  lg:max-w-4xl md:max-w-2xl sm:max-w-xl mx-auto justify-center items-center flex flex-col py-32 gap-12">
         <div className="flex flex-col gap-8 items-center">
-          <h2 className="font-semibold text-[38px]">KBZ Money Alerts</h2>
+          <h2 className="font-semibold xl:text-[42px] lg:text-[2rem] md:text-[1.5rem]  sm:text-[1.8rem]  text-[1.4rem]">
+            KBZ Money Alerts
+          </h2>
         </div>
         <div className="flex items-center">
           <div

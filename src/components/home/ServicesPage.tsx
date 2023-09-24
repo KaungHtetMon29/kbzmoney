@@ -18,7 +18,7 @@ function ServicesPage() {
     <div className="bg-[#F2FBFF]">
       <div className="2xl:max-w-7xl xl:max-w-6xl  lg:max-w-4xl md:max-w-2xl sm:max-w-xl max-w-[350rem] mx-auto justify-center items-center flex flex-col py-32 gap-12">
         <div className="flex flex-col sm:gap-8 gap-4 items-center">
-          <h2 className="font-semibold  sm:text-[1.8rem]  text-[1.4rem]">
+          <h2 className="font-semibold text-center  xl:text-[42px] lg:text-[2rem] md:text-[1.5rem]  sm:text-[1.8rem]  text-[1.4rem]">
             Our Services
           </h2>
           <p className="lg:text-xl sm:text-base text-sm w-1/2 text-center ">
