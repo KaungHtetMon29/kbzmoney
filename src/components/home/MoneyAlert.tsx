@@ -42,9 +42,13 @@ function Moneyalert() {
             </div>
           </div>
           <div className="flex flex-wrap gap-8 items-start justify-center ">
-            {arr.slice(start, start + 3).map((e, i) => {
-              return <Malert key={i} index={i} posts={e} />;
-            })}
+            {posts.length !== 0 ? (
+              posts.slice(start, start + 3).map((e, i) => {
+                return <Malert key={i} index={i} posts={e} />;
+              })
+            ) : (
+              <p>loading....</p>
+            )}
           </div>
           <div
             onClick={() => setstart(start + 3)}
