@@ -14,7 +14,7 @@ function Clientfp({
       <img
         src={Image}
         alt={title}
-        className={`object-contain object-center w-full h-56 p-8 bg-[#${color}] `}
+        className={`object-contain object-center w-full h-56 p-8 ${color}`}
       />
       <div className="px-8 py-8 flex flex-col gap-4 text-left w-full">
         <div>{title}</div>
