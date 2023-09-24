@@ -6,13 +6,13 @@ import samerica from "../../assets/samerica.png";
 function ClientFp() {
   const clinetfp = [
     {
-      color: "#FFF4E3",
+      color: "bg-[#FFF4E3]",
       title: "North America & Caribbean",
       image: america,
       Country: ["United States", "Mexico", "Dominican Republic", "Jamaica"],
     },
     {
-      color: "F2FBFF",
+      color: "bg-[#F2FBFF]",
       title: "Central & South America",
       image: samerica,
       Country: [
@@ -28,7 +28,7 @@ function ClientFp() {
       ],
     },
     {
-      color: "FCEBFF",
+      color: "bg-[#FCEBFF]",
       title: "Europe & Africa",
       image: asia,
       Country: [
@@ -42,7 +42,7 @@ function ClientFp() {
       ],
     },
     {
-      color: "E1F6EF",
+      color: "bg-[#E1F6EF]",
       title: "Middle East & Far East",
       image: meast,
       Country: ["Israel", "Saudi Arabia", "Dubai", "Philippines"],
