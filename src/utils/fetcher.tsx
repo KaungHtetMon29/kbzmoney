@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { Dispatch, createSlice } from "@reduxjs/toolkit";
 
 const initstate = { posts: [], tags: [], cats: [], recposts: [], related: [] };
 const Fetchpostslice = createSlice({
@@ -17,7 +17,7 @@ const Fetchpostslice = createSlice({
 });
 
 export const fetchposts = () => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch) => {
     const res = await fetch(`${import.meta.env.VITE_API_HOST}/post/recandcat`);
     const data = await res.json();
     dispatch(Fetchactions.setposts(data));

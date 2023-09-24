@@ -1,15 +1,22 @@
 import { Clock } from "../../assets/svgs";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchposts } from "../../utils/fetcher";
+type article = {
+  title: string;
+  uimg: any;
+  uname: string;
+  date: string;
+  img: any;
+  post: string;
+  benefit: string;
+};
 function Article() {
   const { id } = useParams();
 
-  const dispatch = useDispatch();
-  const [article, setarticle] = useState();
-  const posts = useSelector((state) => state.Fetchpost.posts);
-  const indexofpost = posts.findIndex((e) => e.postid === Number(id));
+  const [article, setarticle] = useState<article>();
+  const posts = useSelector((state: any) => state.Fetchpost.posts);
+  const indexofpost = posts.findIndex((e: any) => e.postid === Number(id));
   useEffect(() => {
     console.log(typeof id);
     console.log(indexofpost);

@@ -1,10 +1,5 @@
+// @ts-ignore
 import Malert from "../moneyalertcard";
-import nft from "../../assets/nft.png";
-import savbank from "../../assets/savacc.png";
-import bank from "../../assets/bank.png";
-import av1 from "../../assets/av1.png";
-import av2 from "../../assets/av2.png";
-import av3 from "../../assets/av3.png";
 import { Movearrow } from "../../assets/svgs";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { ModeActions } from "../../utils/Mode";
@@ -12,42 +7,11 @@ import { useNavigate } from "react-router-dom";
 import CustBtn from "../btns/Custombtn";
 import { fetchposts } from "../../utils/fetcher";
 import { useEffect, useState } from "react";
+import { AnyAction, Dispatch } from "@reduxjs/toolkit";
 function Moneyalert() {
-  const Malertarray = [
-    {
-      title: "Major Crypto Exchanges Face Action Over",
-      image: nft,
-      acc: {
-        name: "Darlene Robertson",
-        date: "5/27/15",
-        post: "Japan’s financial watchdog is reportedly planning to force improvements at a number of licensed cryptocurrency...",
-        avatar: av1,
-      },
-    },
-    {
-      title: "FinCEN issues regulations requiring that financial",
-      image: savbank,
-      acc: {
-        name: "Courtney Henry",
-        date: "22 Dec 2021",
-        post: "FinCEN is issuing final rules under the Bank Secrecy Act to clarify and strengthen customer due diligence...",
-        avatar: av2,
-      },
-    },
-    {
-      title: "US State Bank Supervisors Issue Model",
-      image: bank,
-      acc: {
-        name: "Jerome Bell",
-        date: "22 Dec 2021",
-        post: "The Conference of State Bank Supervisors (CSBS) has released a draft proposal for regulating digital currency...",
-        avatar: av3,
-      },
-    },
-  ];
   const dispatch = useDispatch();
   const navi = useNavigate();
-  const posts = useSelector((state) => state.Fetchpost.posts);
+  const posts = useSelector((state: any) => state.Fetchpost.posts);
   let arr = [...posts];
   const [start, setstart] = useState(0);
   const Loadmore = () => {

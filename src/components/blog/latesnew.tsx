@@ -1,85 +1,26 @@
 import Malert from "../moneyalertcard";
-import nft from "../../assets/nft.png";
-import savbank from "../../assets/savacc.png";
-import bank from "../../assets/bank.png";
-import av1 from "../../assets/av1.png";
-import av2 from "../../assets/av2.png";
-import av3 from "../../assets/av3.png";
+
 import { Lens } from "../../assets/svgs";
 import CustBtn from "../btns/Custombtn";
 import { useParams } from "react-router-dom";
 import Article from "./Article";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { fetchposts } from "../../utils/fetcher";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+type category = {
+  post_category: string;
+  count: number;
+};
+type recposts = {
+  img: any;
+  title: string;
+};
+type tag = { tag: string };
 function Latestnew() {
-  const Malertarray = [
-    {
-      title: "Major Crypto Exchanges Face Action Over",
-      image: nft,
-      acc: {
-        name: "Darlene Robertson",
-        date: "5/27/15",
-        post: "Japan’s financial watchdog is reportedly planning to force improvements at a number of licensed cryptocurrency...",
-        avatar: av1,
-      },
-    },
-    {
-      title: "FinCEN issues regulations requiring that financial",
-      image: savbank,
-      acc: {
-        name: "Courtney Henry",
-        date: "22 Dec 2021",
-        post: "FinCEN is issuing final rules under the Bank Secrecy Act to clarify and strengthen customer due diligence...",
-        avatar: av2,
-      },
-    },
-    {
-      title: "US State Bank Supervisors Issue Model",
-      image: bank,
-      acc: {
-        name: "Jerome Bell",
-        date: "22 Dec 2021",
-        post: "The Conference of State Bank Supervisors (CSBS) has released a draft proposal for regulating digital currency...",
-        avatar: av3,
-      },
-    },
-    {
-      title: "Major Crypto Exchanges Face Action Over",
-      image: nft,
-      acc: {
-        name: "Darlene Robertson",
-        date: "5/27/15",
-        post: "Japan’s financial watchdog is reportedly planning to force improvements at a number of licensed cryptocurrency...",
-        avatar: av1,
-      },
-    },
-    {
-      title: "FinCEN issues regulations requiring that financial",
-      image: savbank,
-      acc: {
-        name: "Courtney Henry",
-        date: "22 Dec 2021",
-        post: "FinCEN is issuing final rules under the Bank Secrecy Act to clarify and strengthen customer due diligence...",
-        avatar: av2,
-      },
-    },
-    {
-      title: "US State Bank Supervisors Issue Model",
-      image: bank,
-      acc: {
-        name: "Jerome Bell",
-        date: "22 Dec 2021",
-        post: "The Conference of State Bank Supervisors (CSBS) has released a draft proposal for regulating digital currency...",
-        avatar: av3,
-      },
-    },
-  ];
-  const posts = useSelector((state) => state.Fetchpost.posts);
-  const postarr = [...posts];
-  const recposts = useSelector((state) => state.Fetchpost.recposts);
-  const cats = useSelector((state) => state.Fetchpost.cats);
-  const tags = useSelector((state) => state.Fetchpost.tags);
+  const posts = useSelector((state: any) => state.Fetchpost.posts);
+
+  const recposts = useSelector((state: any) => state.Fetchpost.recposts);
+  const cats = useSelector((state: any) => state.Fetchpost.cats);
+  const tags = useSelector((state: any) => state.Fetchpost.tags);
   const { id } = useParams();
   const [page, setpage] = useState(0);
   const load = () => {
@@ -96,7 +37,7 @@ function Latestnew() {
           {id === undefined ? (
             <>
               {/* <Malert posts={posts[0]} /> */}
-              {posts.slice(page, page + 6).map((e, i) => {
+              {posts.slice(page, page + 6).map((e: object, i: number) => {
                 return <Malert key={i} posts={e} index={i} />;
               })}
               <div
@@ -128,7 +69,7 @@ function Latestnew() {
               <h2 className="text-[18px] font-bold">Categories</h2>
             </div>
             <div className="bg-white p-4 rounded-b-lg">
-              {cats.map((e) => (
+              {cats.map((e: category) => (
                 <div className="flex font-semibold">
                   <p className="flex grow">{e.post_category}</p>
                   <p>{e.count}</p>
@@ -140,7 +81,7 @@ function Latestnew() {
             <div className="bg-gray-50 p-4 ">
               <h2 className="text-[18px] font-bold">Recent Post</h2>
             </div>
-            {recposts.map((e) => (
+            {recposts.map((e: recposts) => (
               <div className="bg-white p-4 rounded-b-lg">
                 <div className="flex font-semibold items-center gap-6">
                   <img
@@ -162,7 +103,7 @@ function Latestnew() {
             <div className="bg-white p-4 rounded-b-lg">
               <div className="flex items-center gap-3 flex-wrap">
                 {console.log(tags)}
-                {tags.map((e) => (
+                {tags.map((e: tag) => (
                   <div className="flex flex-col">
                     <p className="bg-gray-200 p-2 rounded-md">{e.tag}</p>
                   </div>
