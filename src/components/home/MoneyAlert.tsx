@@ -61,6 +61,11 @@ function Moneyalert() {
         </div>
         <CustBtn text="Load More" func={Loadmore} />
       </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In porro, quia,
+        iusto itaque culpa repellat earum ducimus tempora totam aspernatur omnis
+        minima! Dolores facere beatae facilis enim odio et nemo.
+      </p>
     </div>
   );
 }
