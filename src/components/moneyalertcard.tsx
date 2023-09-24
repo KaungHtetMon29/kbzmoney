@@ -4,7 +4,7 @@ import { Arrow, Clock } from "../assets/svgs";
 function Malert({ posts, index }: { posts: any; index: number }) {
   const navi = useNavigate();
   return (
-    <div className=" bg-white rounded-lg flex flex-col items-start 2xl:w-96 xl:w-80 lg:w-64 w-[80%] gap-6 shadow-lg ">
+    <div className=" bg-white rounded-lg flex flex-col items-start 2xl:w-96 xl:w-80 lg:w-64 w-[80%] lg:gap-6 gap-2   shadow-lg ">
       {posts !== undefined && (
         <>
           <img
@@ -12,7 +12,7 @@ function Malert({ posts, index }: { posts: any; index: number }) {
             alt={posts.title}
             className={`object-cover object-center w-full xl:h-56 h-40  rounded-t-lg `}
           />
-          <div className="px-5 pt-4 pb-8 flex flex-col gap-4 text-left w-full">
+          <div className="px-5 pt-0 pb-8 flex flex-col gap-4 text-left w-full">
             <div className="xl:text-xl lg:text-lg font-semibold line-clamp-2">
               {posts.title}
             </div>
@@ -36,7 +36,9 @@ function Malert({ posts, index }: { posts: any; index: number }) {
                   </div>
                 </div>
                 <div className="xl:text-base lg:text-sm">
-                  <p className="line-clamp-6">{posts.post} ...</p>
+                  <p className="xl:line-clamp-6 lg:line-clamp-3">
+                    {posts.post} ...
+                  </p>
                 </div>
                 <p
                   className="flex gap-3 items-center font-bold cursor-pointer"

@@ -21,7 +21,7 @@ function WhyStandout() {
             deliver cutting edge Compliance solutions to our clients in a
             dynamic and fast-changing regulatory landscape.
           </p>
-          <div className="flex mx-auto">
+          <div className="flex lg:mx-0 mx-auto">
             <CustBtn text="Learn More" />
           </div>
         </div>
