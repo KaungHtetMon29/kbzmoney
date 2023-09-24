@@ -13,7 +13,7 @@ function Malert({ posts, index }: { posts: any; index: number }) {
             className={`object-cover object-center w-full xl:h-56 h-40  rounded-t-lg `}
           />
           <div className="px-5 pt-4 pb-8 flex flex-col gap-4 text-left w-full">
-            <div className="xl:text-xl lg:text-lg font-semibold">
+            <div className="xl:text-xl lg:text-lg font-semibold line-clamp-2">
               {posts.title}
             </div>
             <div className="w-full text-left">
@@ -36,7 +36,7 @@ function Malert({ posts, index }: { posts: any; index: number }) {
                   </div>
                 </div>
                 <div className="xl:text-base lg:text-sm">
-                  <p>{posts.post}</p>
+                  <p className="line-clamp-6">{posts.post} ...</p>
                 </div>
                 <p
                   className="flex gap-3 items-center font-bold cursor-pointer"

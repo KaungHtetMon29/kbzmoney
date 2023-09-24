@@ -1,4 +1,4 @@
-import { Clock } from "../../assets/svgs";
+import { Calender, Clock, Eye } from "../../assets/svgs";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -46,21 +46,21 @@ function Article() {
               <div className="flex sm:gap-6 gap-2 sm:text-base text-xs ">
                 <div className="flex gap-2 items-center">
                   <div className="sm:w-5 w-3">
-                    <Clock />
+                    <Calender />
                   </div>
                   <p>{article.date}</p>
                 </div>
                 <div className="flex gap-2 items-center">
                   <div className="sm:w-5 w-3">
-                    <Clock />
+                    <Eye />
                   </div>
-                  <p>8/30/21</p>
+                  <p>25k views</p>
                 </div>
                 <div className="flex gap-2 items-center">
                   <div className="sm:w-5 w-3">
                     <Clock />
                   </div>
-                  <p>8/30/21</p>
+                  <p>4 mins read</p>
                 </div>
               </div>
             </div>
